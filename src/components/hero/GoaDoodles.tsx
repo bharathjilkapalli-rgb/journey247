@@ -26,39 +26,86 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
       >
 
         {/* ==================================================
-            1. TOP LEFT: COOL SUN WEARING SUNGLASSES 🕶️☀️
+            1. TOP CENTER: TEASING WINKING SUN WITH SUNGLASSES 🕶️😉☀️
             ================================================== */}
-        <g transform="translate(45, 50)">
-          {/* Outer Sun Glow */}
-          <circle cx="50" cy="50" r="32" fill="#FFD700" opacity="0.15" />
+        <g transform="translate(670, 20)">
+          {/* Sun Glow */}
+          <circle cx="50" cy="50" r="32" fill="#FFD700" opacity="0.2" />
+          
           {/* Sun Body */}
           <circle cx="50" cy="50" r="26" fill="#FFD700" stroke="#FF007F" strokeWidth="2.5" />
 
-          {/* Sun Rays */}
-          {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle) => (
-            <line
-              key={angle}
-              x1={50 + 31 * Math.cos((angle * Math.PI) / 180)}
-              y1={50 + 31 * Math.sin((angle * Math.PI) / 180)}
-              x2={50 + 42 * Math.cos((angle * Math.PI) / 180)}
-              y2={50 + 42 * Math.sin((angle * Math.PI) / 180)}
-              stroke="#FFD700"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-          ))}
+          {/* Sun Rays Rotating */}
+          <motion.g
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: "50px 50px" }}
+          >
+            {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle) => (
+              <line
+                key={angle}
+                x1={50 + 31 * Math.cos((angle * Math.PI) / 180)}
+                y1={50 + 31 * Math.sin((angle * Math.PI) / 180)}
+                x2={50 + 42 * Math.cos((angle * Math.PI) / 180)}
+                y2={50 + 42 * Math.sin((angle * Math.PI) / 180)}
+                stroke="#FFD700"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            ))}
+          </motion.g>
 
-          {/* Cool Wayfarer Sunglasses */}
-          <g transform="translate(26, 36)">
+          {/* Sun Face Features Behind Sunglasses (Revealed when glasses lift) */}
+          {/* Left Eye: Funny Teasing Wink 😉 */}
+          <motion.path
+            d="M 33 44 Q 40 38, 47 44"
+            stroke="#052E1D"
+            strokeWidth="3"
+            strokeLinecap="round"
+            fill="none"
+            animate={{ scaleY: [1, 0.2, 1, 0.2, 1] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Right Eye: Wide Open & Cheeky 👀 */}
+          <circle cx="60" cy="42" r="3.5" fill="#052E1D" />
+          <circle cx="61.5" cy="40.5" r="1.2" fill="#FAF7F2" />
+
+          {/* Teasing Smile + Tongue Sticking Out 😛 */}
+          <path d="M 40 56 Q 50 66, 60 56" stroke="#052E1D" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+          <motion.path
+            d="M 47 58 Q 50 65, 53 58 Z"
+            fill="#FF007F"
+            stroke="#052E1D"
+            strokeWidth="1"
+            animate={{ y: [0, 2, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Animated Sunglasses: Lifts off face, holds up while sun winks, lowers back down 🕶️ */}
+          <motion.g
+            animate={{
+              y: [0, 0, -28, -28, 0, 0],
+              rotate: [0, 0, -8, -8, 0, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: [0.16, 1, 0.3, 1],
+              times: [0, 0.3, 0.42, 0.75, 0.88, 1],
+            }}
+            transform="translate(26, 34)"
+          >
+            {/* Left Lens */}
             <path d="M 0 4 L 20 4 L 17 17 Q 10 21, 3 17 Z" fill="#052E1D" stroke="#FF007F" strokeWidth="2" />
+            {/* Right Lens */}
             <path d="M 27 4 L 47 4 L 44 17 Q 37 21, 30 17 Z" fill="#052E1D" stroke="#FF007F" strokeWidth="2" />
+            {/* Sunglasses Bridge */}
             <line x1="20" y1="6" x2="27" y2="6" stroke="#FF007F" strokeWidth="2.5" />
+            {/* Glare Lines */}
             <line x1="4" y1="7" x2="10" y2="15" stroke="#FAF7F2" strokeWidth="1.5" opacity="0.7" />
             <line x1="31" y1="7" x2="37" y2="15" stroke="#FAF7F2" strokeWidth="1.5" opacity="0.7" />
-          </g>
-
-          {/* Cheeky Smirk Smile */}
-          <path d="M 40 60 Q 50 67, 58 60" stroke="#052E1D" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+          </motion.g>
         </g>
 
         {/* CODE TAG top left </> */}

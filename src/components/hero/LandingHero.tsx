@@ -78,17 +78,17 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           aria-label="2:47PM Studio - tap for manifesto"
         >
           <span
-            className="text-hh-yellow font-black text-3xl sm:text-4xl md:text-5xl tracking-widest group-hover:text-yellow-300 transition-colors duration-200"
+            className="text-hh-yellow font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight group-hover:text-yellow-300 transition-colors duration-200"
             style={{
-              fontFamily: "'Noto Serif Devanagari', serif",
+              fontFamily: "'Sora', sans-serif",
               textShadow: "0 0 18px rgba(250,204,21,0.6)",
             }}
           >
             2:47PM
           </span>
           <span
-            className="text-hh-yellow font-bold text-lg sm:text-xl md:text-2xl tracking-[0.35em] group-hover:text-yellow-300 transition-colors duration-200"
-            style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
+            className="text-hh-yellow font-bold text-base sm:text-lg md:text-xl tracking-[0.3em] group-hover:text-yellow-300 transition-colors duration-200 mt-0.5"
+            style={{ fontFamily: "'Sora', sans-serif" }}
           >
             STUDIO
           </span>
