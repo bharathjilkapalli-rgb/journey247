@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-forest-950: #052E1D;
+  --bg-forest-900: #0B4F32;
+  --bg-forest-800: #0D5C3A;
+  --bg-cream-50: #FAF7F2;
+  --bg-cream-100: #F6F3EB;
+  --accent-pink: #FF007F;
+  --accent-yellow: #FACC15;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', Inter, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-signature: 'Caveat', cursive;
+}
+
+body {
+  background-color: var(--bg-forest-950);
+  color: #FAF7F2;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial Paper Texture background overlay — deeper grain for vintage look */
+.paper-texture {
+  background-image: linear-gradient(160deg, #F9EDD5 0%, #F5E6C8 40%, #EDD9A3 100%);
+  position: relative;
+}
+
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/png;base64,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");
+  background-size: 200px 200px;
+}
+
+
+/* Coffee / tea ring stain decorative mark */
+.coffee-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(139, 90, 43, 0.18);
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 0 3px rgba(139, 90, 43, 0.06),
+    0 0 0 1px rgba(139, 90, 43, 0.08);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(139, 90, 43, 0.07) 65%,
+    rgba(139, 90, 43, 0.12) 72%,
+    rgba(139, 90, 43, 0.05) 80%,
+    transparent 88%
+  );
+}
+
+/* Diagonal rubber stamp label utility */
+.diagonal-stamp {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2.5px solid currentColor;
+  padding: 4px 10px;
+  transform: rotate(-14deg);
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+}
+
+/* Gold foil sheen effect */
+.gold-foil-bg {
+  background: linear-gradient(
+    135deg,
+    #BF953F 0%,
+    #FCF6BA 25%,
+    #B38728 50%,
+    #FBF5B7 75%,
+    #AA771C 100%
+  );
+}
+
+.pink-gold-foil-bg {
+  background: linear-gradient(
+    135deg,
+    #FF007F 0%,
+    #FFD700 35%,
+    #0B4F32 70%,
+    #FF007F 100%
+  );
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #052E1D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0D5C3A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #169862;
+}
+
+/* Editorial Serif Text Utility */
+.font-serif-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.font-signature {
+  font-family: var(--font-signature);
+}
+
+/* Tracked Uppercase Subheadings */
+.tracked-caps {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* Photo filters */
+.filter-warm {
+  filter: contrast(1.06) saturate(1.15) sepia(0.08);
+}
+
+.filter-emerald {
+  filter: contrast(1.1) hue-rotate(15deg) saturate(1.2);
+}
+
+.filter-noir {
+  filter: grayscale(1) contrast(1.25);
+}
+
+.filter-sunset {
+  filter: contrast(1.08) saturate(1.3) hue-rotate(-10deg);
+}
+
+/* Shimmer overlay animation */
+@keyframes sheenPass {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(250%) rotate(25deg);
+  }
+}
+
+.sheen-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  animation: sheenPass 6s infinite;
+  pointer-events: none;
+}
+
+/* Vintage twine/string animation for luggage tag */
+@keyframes tagSway {
+  0%, 100% { transform: rotate(1deg); }
+  50% { transform: rotate(-1deg); }
+}
+
+.tag-sway {
+  animation: tagSway 4s ease-in-out infinite;
+  transform-origin: top center;
+}
