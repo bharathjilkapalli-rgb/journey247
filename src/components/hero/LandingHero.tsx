@@ -70,7 +70,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="absolute left-[6vw] sm:left-[10vw] md:left-[14vw] top-[5vh] sm:top-[8vh] md:top-[12vh] z-30 pointer-events-auto"
+        className="absolute top-4 left-4 sm:top-6 sm:left-8 md:top-6 md:left-8 z-30 pointer-events-auto"
       >
         <button
           onClick={onLogoTap}
