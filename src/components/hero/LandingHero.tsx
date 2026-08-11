@@ -139,21 +139,22 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           >
             HACKER{" "}
             <span
-              className="inline-block px-3 py-1 rounded-lg mx-1 align-middle"
+              className="inline-block px-4 py-1 rounded-xl mx-2 align-middle border border-pink-400/40"
               style={{
                 background:
                   "linear-gradient(135deg, #FF007F 0%, #FF4DA6 100%)",
                 color: "#FAF7F2",
-                fontSize: "clamp(2rem, 7vw, 5.5rem)",
-                textShadow: "none",
+                fontSize: "clamp(2.5rem, 8vw, 6rem)",
+                textShadow: "0 2px 10px rgba(0,0,0,0.3)",
                 WebkitTextStroke: "0",
                 verticalAlign: "middle",
-                fontFamily: "'Noto Sans Devanagari', sans-serif",
-                letterSpacing: "0.02em",
-                boxShadow: "0 4px 20px rgba(255,0,127,0.5)",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontWeight: "900",
+                letterSpacing: "0.04em",
+                boxShadow: "0 6px 25px rgba(255,0,127,0.6)",
               }}
             >
-              गोवा
+              GOA
             </span>{" "}
             HOUSE
           </h1>
