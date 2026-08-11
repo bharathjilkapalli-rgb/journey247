@@ -179,7 +179,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
         {/* ==================================================
             2. LEFT SIDE: PROMINENT LIGHTHOUSE DOODLE 🚨🚨
             ================================================== */}
-        <g transform="translate(25, 340)">
+        <g transform="translate(5, 250) scale(1.35)">
           {/* Lighthouse Base Rocks */}
           <path d="M -10 380 Q 30 365, 80 380 Q 110 370, 130 380 Z" fill="#0B4F32" stroke="#FFD700" strokeWidth="2.5" />
           
@@ -229,7 +229,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
         </g>
 
         {/* ===== LEFT: SURFBOARDS ===== */}
-        <g transform="translate(70, 710) rotate(-18)">
+        <g transform="translate(75, 720) rotate(-18)">
           <path d="M 0 0 Q 18 -60, 35 -120 Q 52 -60, 70 0 Z" fill="#FF007F" stroke="#FFD700" strokeWidth="2.5" />
           <line x1="35" y1="-115" x2="35" y2="-5" stroke="#FFD700" strokeWidth="2.5" />
         </g>
@@ -237,7 +237,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
         {/* ==================================================
             3. RIGHT SIDE: PROMINENT LIGHTHOUSE DOODLE 🚨🚨
             ================================================== */}
-        <g transform="translate(1330, 320)">
+        <g transform="translate(1280, 240) scale(1.35)">
           {/* Base */}
           <path d="M -15 390 Q 25 375, 75 390 Q 105 380, 125 390 Z" fill="#0B4F32" stroke="#FFD700" strokeWidth="2.5" />
 
