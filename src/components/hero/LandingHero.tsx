@@ -41,8 +41,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
   };
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-forest-950 flex flex-col items-center justify-center">
-      {/* ── BACKGROUND DOODLE LAYER ── */}
+    <div className="relative h-screen w-full min-h-[700px] max-h-screen overflow-hidden bg-forest-950 flex flex-col items-center justify-between select-none">
+      {/* ── BACKGROUND DOODLE LAYER (PERIMETER ONLY) ── */}
       <GoaDoodles mousePos={mousePos} />
 
       {/* ── RADIAL SPOTLIGHT ATMOSPHERE ── */}
@@ -50,7 +50,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
         className="absolute inset-0 pointer-events-none z-10"
         style={{
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(11,79,50,0.18) 0%, rgba(5,46,29,0.7) 60%, rgba(5,46,29,0.97) 100%)",
+            "radial-gradient(ellipse 65% 55% at 50% 48%, rgba(11,79,50,0.22) 0%, rgba(5,46,29,0.75) 60%, rgba(5,46,29,0.98) 100%)",
         }}
       />
 
@@ -59,82 +59,84 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
         className="absolute inset-0 pointer-events-none z-10"
         style={{
           background:
-            "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(5,46,29,0.85) 100%)",
+            "radial-gradient(ellipse 95% 95% at 50% 50%, transparent 45%, rgba(5,46,29,0.85) 100%)",
         }}
       />
 
-      {/* ── MAIN CONTENT ── */}
-      <div className="relative z-20 flex flex-col items-center text-center px-4 py-8 w-full max-w-5xl mx-auto">
-
-        {/* ── TOP BAR: Logo ── */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="absolute top-6 left-0 right-0 flex items-center justify-between pl-4 pr-6 sm:pl-6 sm:pr-10"
+      {/* ==================================================
+          TOP / BRANDING AREA (UPPER-LEFT, Approx 18% Left, 24% Top)
+          ================================================== */}
+      <motion.div
+        initial={{ opacity: 0, y: -15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="absolute left-[8vw] sm:left-[14vw] md:left-[18vw] top-[6vh] sm:top-[12vh] md:top-[18vh] z-30 pointer-events-auto"
+      >
+        <button
+          onClick={onLogoTap}
+          className="flex flex-col items-start leading-tight cursor-pointer group text-left"
+          aria-label="2:47PM Studio - tap for manifesto"
         >
-          {/* 2:47PM STUDIO Logo */}
-          <button
-            onClick={onLogoTap}
-            className="flex flex-col items-start leading-tight cursor-pointer group select-none"
-            aria-label="2:47PM Studio - tap for manifesto"
+          <span
+            className="text-hh-yellow font-black text-2xl sm:text-3xl md:text-4xl tracking-widest group-hover:text-yellow-300 transition-colors duration-200"
+            style={{
+              fontFamily: "'Noto Serif Devanagari', serif",
+              textShadow: "0 0 16px rgba(250,204,21,0.55)",
+            }}
           >
-            <span
-              className="text-hh-yellow font-black text-3xl sm:text-4xl md:text-5xl tracking-widest group-hover:text-yellow-300 transition-colors duration-200"
-              style={{
-                fontFamily: "'Noto Serif Devanagari', serif",
-                textShadow: "0 0 12px rgba(250,204,21,0.5)",
-              }}
-            >
-              2:47PM
-            </span>
-            <span
-              className="text-hh-yellow font-bold text-xl sm:text-2xl md:text-3xl tracking-[0.35em] group-hover:text-yellow-300 transition-colors duration-200"
-              style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
-            >
-              STUDIO
-            </span>
-          </button>
-        </motion.div>
+            2:47PM
+          </span>
+          <span
+            className="text-hh-yellow font-bold text-base sm:text-lg md:text-xl tracking-[0.35em] group-hover:text-yellow-300 transition-colors duration-200"
+            style={{ fontFamily: "'Noto Serif Devanagari', serif" }}
+          >
+            STUDIO
+          </span>
+        </button>
+      </motion.div>
 
-        {/* ── TAGLINE ── */}
+      {/* ==================================================
+          CENTRAL HERO CONTENT COLUMN (Center = Content, 55-60% Width)
+          ================================================== */}
+      <div className="relative z-20 flex flex-col items-center justify-center text-center my-auto px-4 w-full max-w-[92vw] sm:max-w-[75vw] md:max-w-[60vw]">
+
+        {/* ── 1. TAGLINE ── */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="font-serif italic text-cream-50/80 text-lg sm:text-2xl md:text-3xl mb-2 mt-4"
+          className="font-serif italic text-cream-50/90 text-lg sm:text-2xl md:text-3xl mb-8 tracking-tight"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
           Code.{" "}
-          <span className="text-hh-pink not-italic">Create.</span>{" "}
+          <span className="text-hh-pink not-italic font-bold">Create.</span>{" "}
           Escape. Repeat.
         </motion.p>
 
-        {/* ── MAIN TITLE ── */}
+        {/* ── 2. MAIN TITLE (PRIMARY VISUAL FOCAL POINT) ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 20 }}
+          initial={{ opacity: 0, scale: 0.94, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-4 w-full flex items-center justify-center"
+          className="relative mb-7 w-full flex items-center justify-center"
         >
-          {/* Glow behind title */}
+          {/* Subtle Glow behind main title */}
           <div
             className="absolute inset-0 blur-3xl opacity-35 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse, #FFD700 0%, transparent 70%)",
-              transform: "scaleY(0.5)",
+                "radial-gradient(ellipse 80% 50% at 50% 50%, #FFD700 0%, transparent 70%)",
             }}
           />
 
-          {/* Title Container with cute floating doodles */}
+          {/* Title Container with small cute vector accents */}
           <div className="relative inline-flex items-center justify-center">
 
-            {/* Doodle 1: Cute Mini Palm Leaf Accent (Top Left) */}
+            {/* Accent 1: Cute Mini Palm Leaf Accent (Top Left) */}
             <motion.svg
               animate={{ rotate: [-4, 4, -4], y: [0, -3, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 -left-6 sm:-top-8 sm:-left-10 w-8 h-8 sm:w-12 sm:h-12 text-hh-yellow drop-shadow-md pointer-events-none z-10"
+              className="absolute -top-7 -left-7 sm:-top-9 sm:-left-11 w-7 h-7 sm:w-11 sm:h-11 text-hh-yellow drop-shadow-md pointer-events-none z-10"
               viewBox="0 0 40 40"
               fill="none"
             >
@@ -144,22 +146,22 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
               <circle cx="28" cy="12" r="2.5" fill="#FF007F" />
             </motion.svg>
 
-            {/* Doodle 2: Glowing Sparkle (Top Right of Hindi Badge) */}
+            {/* Accent 2: Glowing Sparkle (Top Center above Hindi Badge) */}
             <motion.svg
               animate={{ scale: [0.85, 1.15, 0.85], rotate: [0, 90, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-5 left-1/2 -translate-x-1/2 sm:-top-7 w-6 h-6 sm:w-8 sm:h-8 text-hh-yellow pointer-events-none z-10"
+              className="absolute -top-6 left-1/2 -translate-x-1/2 sm:-top-8 w-6 h-6 sm:w-8 sm:h-8 text-hh-yellow pointer-events-none z-10"
               viewBox="0 0 24 24"
               fill="#FFD700"
             >
               <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
             </motion.svg>
 
-            {/* Doodle 3: Mini Paper Plane (Top Right of Title) */}
+            {/* Accent 3: Mini Paper Plane (Top Right of Title) */}
             <motion.div
               animate={{ x: [-2, 3, -2], y: [0, -4, 0], rotate: [-5, 5, -5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-7 -right-6 sm:-top-10 sm:-right-10 pointer-events-none z-10"
+              className="absolute -top-8 -right-7 sm:-top-11 sm:-right-11 pointer-events-none z-10"
             >
               <svg className="w-8 h-8 sm:w-11 sm:h-11 drop-shadow-md" viewBox="0 0 40 40" fill="none">
                 <path d="M 5 20 C 12 10, 22 25, 30 12" stroke="#FF007F" strokeWidth="1.5" strokeDasharray="2 2" fill="none" />
@@ -168,30 +170,30 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
               </svg>
             </motion.div>
 
-            {/* Single Line Headline */}
+            {/* Main Title Heading */}
             <h1
               className="relative font-black leading-none tracking-tight select-none flex items-center justify-center whitespace-nowrap"
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: "clamp(2rem, 7.5vw, 6.5rem)",
+                fontSize: "clamp(2.2rem, 7.2vw, 6.2rem)",
                 color: "#FFD700",
                 textShadow:
-                  "0 0 35px rgba(255,215,0,0.45), 0 4px 0 rgba(180,130,0,0.6), 0 7px 0 rgba(100,70,0,0.3), 2px 2px 0 rgba(255,215,0,0.3)",
-                WebkitTextStroke: "1px rgba(255,215,0,0.2)",
+                  "0 0 40px rgba(255,215,0,0.5), 0 4px 0 rgba(180,130,0,0.6), 0 7px 0 rgba(100,70,0,0.3), 2px 2px 0 rgba(255,215,0,0.3)",
+                WebkitTextStroke: "1px rgba(255,215,0,0.25)",
               }}
             >
               <span>HACKER</span>
 
-              {/* Hindi Goa Badge */}
+              {/* Hindi "गोवा" Accent Badge */}
               <motion.span
                 whileHover={{ scale: 1.08, rotate: -2 }}
-                className="inline-flex items-center justify-center px-3 sm:px-5 py-0.5 sm:py-1 rounded-xl mx-2 sm:mx-3 align-middle border-2 border-pink-400/50 relative shadow-pink-glow"
+                className="inline-flex items-center justify-center px-3 sm:px-5 py-0.5 sm:py-1 rounded-xl mx-2 sm:mx-3.5 align-middle border-2 border-pink-400/50 relative shadow-pink-glow"
                 style={{
                   background:
                     "linear-gradient(135deg, #FF007F 0%, #FF4DA6 100%)",
                   color: "#FAF7F2",
-                  fontSize: "clamp(1.6rem, 5.5vw, 4.8rem)",
-                  textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                  fontSize: "clamp(1.7rem, 5.5vw, 4.6rem)",
+                  textShadow: "0 2px 8px rgba(0,0,0,0.35)",
                   WebkitTextStroke: "0",
                   fontFamily: "'Noto Sans Devanagari', 'Playfair Display', sans-serif",
                   fontWeight: "800",
@@ -205,7 +207,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
               <span>HOUSE</span>
             </h1>
 
-            {/* Doodle 4: Cute Mini Code Tag Badge (Bottom Right) */}
+            {/* Accent 4: Mini Code Tag Badge (Bottom Right) */}
             <motion.div
               animate={{ y: [0, 3, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
@@ -217,42 +219,38 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           </div>
         </motion.div>
 
-        {/* ── EVENT DATE & LOCATION ── */}
+        {/* ── 3. EVENT INFORMATION ── */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-8"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-9"
         >
-          <span
-            className="font-mono font-bold text-base sm:text-xl tracking-widest text-cream-50/90 uppercase"
-          >
+          <span className="font-mono font-bold text-sm sm:text-lg md:text-xl tracking-[0.25em] text-cream-100 uppercase">
             GOA, INDIA
           </span>
-          <span className="text-hh-pink text-xl">★</span>
-          <span className="text-cream-50/50 text-lg">📅</span>
-          <span
-            className="font-mono font-bold text-base sm:text-xl tracking-widest text-cream-50/90 uppercase"
-          >
+          <span className="text-hh-pink text-base sm:text-xl">★</span>
+          <span className="font-mono font-bold text-sm sm:text-lg md:text-xl tracking-[0.25em] text-cream-100 uppercase">
             28 – 31 OCT 2026
           </span>
         </motion.div>
 
-        {/* ── CTA BUTTON ── */}
+        {/* ── 4. PRIMARY CTA (SECOND STRONGEST FOCAL POINT) ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 15 }}
+          initial={{ opacity: 0, scale: 0.9, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.85, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8"
         >
           <button
             id="begin-verification-btn"
             onClick={handleBegin}
-            className="group relative inline-flex items-center gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black text-base sm:text-lg tracking-[0.15em] uppercase text-forest-950 transition-all duration-300 hover:scale-105 active:scale-95 sheen-effect overflow-hidden shadow-gold-glow"
+            className="group relative inline-flex items-center justify-center gap-3.5 w-[340px] sm:w-[420px] max-w-[90vw] h-[62px] sm:h-[72px] rounded-full font-black text-sm sm:text-base md:text-lg tracking-[0.18em] uppercase text-forest-950 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] sheen-effect overflow-hidden cursor-pointer"
             style={{
               background:
-                "linear-gradient(135deg, #FFD700 0%, #FACC15 40%, #FFD700 100%)",
+                "linear-gradient(135deg, #FFD700 0%, #FACC15 45%, #FFD700 100%)",
               boxShadow:
-                "0 0 30px rgba(250,204,21,0.4), 0 4px 20px rgba(0,0,0,0.3)",
+                "0 0 28px rgba(250,204,21,0.4), 0 8px 24px rgba(0,0,0,0.35)",
             }}
             aria-label="Begin Builder Verification"
           >
@@ -263,18 +261,18 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           </button>
         </motion.div>
 
-        {/* ── SUBTLE BOTTOM TAGLINE ── */}
+        {/* ── 5. SUPPORTING INFORMATION ── */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-6 font-mono text-xs sm:text-sm text-cream-50/40 tracking-[0.2em] uppercase"
+          transition={{ delay: 1.15, duration: 0.8 }}
+          className="font-mono text-[11px] sm:text-xs md:text-sm text-emerald-300/70 tracking-[0.25em] uppercase font-semibold"
         >
-          247 Builders · 4 Days · One Beachfront Residency
+          247 BUILDERS • 4 DAYS • ONE BEACHFRONT RESIDENCY
         </motion.p>
       </div>
 
-      {/* ── TAKEOFF OVERLAY ── */}
+      {/* ── TAKEOFF OVERLAY ANIMATION ── */}
       <GoaAirlinesTakeoff isTakingOff={isTakingOff} onComplete={onBegin} />
     </div>
   );

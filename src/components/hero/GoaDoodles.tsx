@@ -19,7 +19,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
       aria-hidden="true"
     >
       <svg
-        className="w-full h-full"
+        className="w-full h-full opacity-45"
         viewBox="0 0 1440 900"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
