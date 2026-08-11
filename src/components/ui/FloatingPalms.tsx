@@ -15,10 +15,9 @@ export const FloatingPalms: React.FC = () => {
 
     const handleMouseMove = (e: MouseEvent) => {
       if (mediaQuery.matches) return;
-      // Section 4 Layer 2: Palm leaves move 5px max
       setMousePos({
-        x: (e.clientX / window.innerWidth - 0.5) * 5,
-        y: (e.clientY / window.innerHeight - 0.5) * 5,
+        x: (e.clientX / window.innerWidth - 0.5) * 6,
+        y: (e.clientY / window.innerHeight - 0.5) * 6,
       });
     };
 
@@ -28,7 +27,24 @@ export const FloatingPalms: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-      {/* SECTION 4: LAYER 2 - PALM LEAVES SILHOUETTES (5px Parallax) */}
+      {/* LAYERED GOA BEACH LANDSCAPE ARTWORK BACKGROUND */}
+      <motion.div
+        animate={{
+          x: isMobile ? 0 : mousePos.x * 0.4,
+          y: isMobile ? 0 : mousePos.y * 0.4,
+        }}
+        transition={{ type: "spring", stiffness: 50, damping: 25 }}
+        className="absolute inset-0 z-0 opacity-25 mix-blend-luminosity bg-cover bg-center bg-no-repeat filter contrast-110 saturate-125 pointer-events-none"
+        style={{
+          backgroundImage: `url('/goa-beach-bg.jpg')`,
+        }}
+      />
+
+      {/* Dark Forest Green Gradient Masking Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-forest-950/85 via-forest-950/60 to-forest-950/90 z-0" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-forest-950/40 to-forest-950/95 z-0" />
+
+      {/* FOREGROUND PALM LEAF PARALLAX SILHOUETTES */}
       <motion.div
         animate={{
           rotate: [-1.5, 1.5, -1.5],
@@ -36,7 +52,7 @@ export const FloatingPalms: React.FC = () => {
           x: isMobile ? 0 : mousePos.x,
         }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-10 -left-12 opacity-20 text-emerald-800"
+        className="absolute -top-10 -left-12 opacity-30 text-emerald-700 z-10"
       >
         <svg className="w-80 h-80 sm:w-[420px] sm:h-[420px]" viewBox="0 0 200 200" fill="currentColor">
           <path d="M10,10 Q90,50 170,140 Q150,110 10,10 Z" opacity="0.9" />
@@ -53,7 +69,7 @@ export const FloatingPalms: React.FC = () => {
           x: isMobile ? 0 : -mousePos.x,
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-16 -right-16 opacity-15 text-emerald-900"
+        className="absolute -bottom-16 -right-16 opacity-25 text-emerald-800 z-10"
       >
         <svg className="w-96 h-96 sm:w-[480px] sm:h-[480px]" viewBox="0 0 200 200" fill="currentColor">
           <path d="M190,190 Q110,120 30,50 Q60,90 190,190 Z" opacity="0.9" />
