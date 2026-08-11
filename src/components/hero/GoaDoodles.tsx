@@ -55,8 +55,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
             ))}
           </motion.g>
 
-          {/* Sun Face Features Behind Sunglasses (Revealed when glasses lift) */}
-          {/* Left Eye: Funny Teasing Wink 😉 */}
+          {/* Sun Face Features Behind Sunglasses */}
           <motion.path
             d="M 33 44 Q 40 38, 47 44"
             stroke="#052E1D"
@@ -67,11 +66,9 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
 
-          {/* Right Eye: Wide Open & Cheeky 👀 */}
           <circle cx="60" cy="42" r="3.5" fill="#052E1D" />
           <circle cx="61.5" cy="40.5" r="1.2" fill="#FAF7F2" />
 
-          {/* Teasing Smile + Tongue Sticking Out 😛 */}
           <path d="M 40 56 Q 50 66, 60 56" stroke="#052E1D" strokeWidth="2.5" strokeLinecap="round" fill="none" />
           <motion.path
             d="M 47 58 Q 50 65, 53 58 Z"
@@ -82,7 +79,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
 
-          {/* Animated Sunglasses: Lifts off face, holds up while sun winks, lowers back down 🕶️ */}
+          {/* Animated Sunglasses */}
           <motion.g
             animate={{
               y: [0, 0, -28, -28, 0, 0],
@@ -96,13 +93,9 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
             }}
             transform="translate(26, 34)"
           >
-            {/* Left Lens */}
             <path d="M 0 4 L 20 4 L 17 17 Q 10 21, 3 17 Z" fill="#052E1D" stroke="#FF007F" strokeWidth="2" />
-            {/* Right Lens */}
             <path d="M 27 4 L 47 4 L 44 17 Q 37 21, 30 17 Z" fill="#052E1D" stroke="#FF007F" strokeWidth="2" />
-            {/* Sunglasses Bridge */}
             <line x1="20" y1="6" x2="27" y2="6" stroke="#FF007F" strokeWidth="2.5" />
-            {/* Glare Lines */}
             <line x1="4" y1="7" x2="10" y2="15" stroke="#FAF7F2" strokeWidth="1.5" opacity="0.7" />
             <line x1="31" y1="7" x2="37" y2="15" stroke="#FAF7F2" strokeWidth="1.5" opacity="0.7" />
           </motion.g>
@@ -184,51 +177,113 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
         </g>
 
         {/* ==================================================
-            2. LEFT SIDE: REAL LUSH COCONUT PALM TREE 🌴
+            2. LEFT SIDE: PROMINENT LIGHTHOUSE DOODLE 🚨🚨
             ================================================== */}
-        <g transform="translate(15, 360)">
-          <path d="M 85 510 Q 65 310, 105 130 Q 115 50, 120 0" stroke="#FFD700" strokeWidth="6" fill="none" strokeLinecap="round" />
-          {[60, 130, 200, 270, 340, 410, 470].map((y, i) => (
-            <line key={i} x1={70 + i * 4} y1={y} x2={88 + i * 4} y2={y - 8} stroke="#052E1D" strokeWidth="2.5" />
-          ))}
+        <g transform="translate(25, 340)">
+          {/* Lighthouse Base Rocks */}
+          <path d="M -10 380 Q 30 365, 80 380 Q 110 370, 130 380 Z" fill="#0B4F32" stroke="#FFD700" strokeWidth="2.5" />
+          
+          {/* Lighthouse Main Tapered Tower */}
+          <path d="M 25 375 L 42 70 L 78 70 L 95 375 Z" fill="#053B1F" stroke="#FFD700" strokeWidth="3.5" />
 
-          <circle cx="110" cy="18" r="9" fill="#FF007F" stroke="#FFD700" strokeWidth="2" />
-          <circle cx="126" cy="26" r="9" fill="#FF007F" stroke="#FFD700" strokeWidth="2" />
-          <circle cx="114" cy="34" r="9" fill="#FFD700" stroke="#052E1D" strokeWidth="2" />
+          {/* Red & Gold Stripes */}
+          <path d="M 38 130 L 82 130 L 87 200 L 33 200 Z" fill="#FF007F" opacity="0.9" />
+          <path d="M 30 260 L 90 260 L 93 320 L 27 320 Z" fill="#FF007F" opacity="0.9" />
+          <line x1="38" y1="130" x2="82" y2="130" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="33" y1="200" x2="87" y2="200" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="30" y1="260" x2="90" y2="260" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="27" y1="320" x2="93" y2="320" stroke="#FFD700" strokeWidth="2.5" />
 
-          <path d="M 120 0 Q 40 -40, -40 20" stroke="#FFD700" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M 90 -20 Q 55 -5, 10 30 M 70 -25 Q 35 15, -15 40 M 50 -15 Q 15 25, -30 50" stroke="#1DB979" strokeWidth="2" fill="none" />
+          {/* Balcony Railing */}
+          <rect x="34" y="60" width="52" height="10" rx="3" fill="#FFD700" stroke="#052E1D" strokeWidth="2" />
+          <line x1="36" y1="60" x2="36" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="48" y1="60" x2="48" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="60" y1="60" x2="60" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="72" y1="60" x2="72" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="84" y1="60" x2="84" y2="70" stroke="#052E1D" strokeWidth="1.5" />
 
-          <path d="M 120 0 Q 70 -80, 25 -120" stroke="#FFD700" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M 100 -50 Q 65 -85, 15 -115 M 80 -65 Q 45 -100, 0 -130" stroke="#1DB979" strokeWidth="2" fill="none" />
+          {/* Lantern Room Glass */}
+          <rect x="40" y="24" width="40" height="36" rx="4" fill="#FFD700" stroke="#FF007F" strokeWidth="2.5" />
+          <circle cx="60" cy="42" r="10" fill="#FAF7F2" />
 
-          <path d="M 120 0 Q 200 -80, 275 -35" stroke="#FFD700" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M 155 -45 Q 205 -65, 260 -25 M 185 -30 Q 230 -40, 280 0" stroke="#1DB979" strokeWidth="2" fill="none" />
+          {/* Dome Top & Spire */}
+          <path d="M 40 24 Q 60 4, 80 24 Z" fill="#FF007F" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="60" y1="4" x2="60" y2="-12" stroke="#FFD700" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="60" cy="-14" r="4" fill="#FFD700" />
+
+          {/* Rotating Beaming Light Rays */}
+          <motion.g
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: "60px 42px" }}
+          >
+            <polygon points="60,42 220,10 240,75" fill="url(#leftLightGradient)" opacity="0.6" />
+            <polygon points="60,42 -100,10 -120,75" fill="url(#leftLightGradient)" opacity="0.6" />
+          </motion.g>
+          <defs>
+            <linearGradient id="leftLightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#FFD700" stopOpacity="0" />
+            </linearGradient>
+          </defs>
         </g>
 
         {/* ===== LEFT: SURFBOARDS ===== */}
-        <g transform="translate(60, 710) rotate(-18)">
+        <g transform="translate(70, 710) rotate(-18)">
           <path d="M 0 0 Q 18 -60, 35 -120 Q 52 -60, 70 0 Z" fill="#FF007F" stroke="#FFD700" strokeWidth="2.5" />
           <line x1="35" y1="-115" x2="35" y2="-5" stroke="#FFD700" strokeWidth="2.5" />
         </g>
 
         {/* ==================================================
-            3. RIGHT SIDE: SECOND LUSH COCONUT PALM TREE 🌴
+            3. RIGHT SIDE: PROMINENT LIGHTHOUSE DOODLE 🚨🚨
             ================================================== */}
-        <g transform="translate(1310, 340)">
-          <path d="M 60 530 Q 75 330, 20 140 Q 5 60, 0 0" stroke="#FFD700" strokeWidth="6" fill="none" strokeLinecap="round" />
-          {[60, 130, 200, 270, 340, 410, 480].map((y, i) => (
-            <line key={i} x1={30 - i * 3} y1={y} x2={50 - i * 3} y2={y - 8} stroke="#052E1D" strokeWidth="2.5" />
-          ))}
+        <g transform="translate(1330, 320)">
+          {/* Base */}
+          <path d="M -15 390 Q 25 375, 75 390 Q 105 380, 125 390 Z" fill="#0B4F32" stroke="#FFD700" strokeWidth="2.5" />
 
-          <circle cx="-12" cy="18" r="9" fill="#FFD700" stroke="#FF007F" strokeWidth="2" />
-          <circle cx="-2" cy="28" r="9" fill="#FF007F" stroke="#FFD700" strokeWidth="2" />
+          {/* Main Tapered Tower */}
+          <path d="M 20 385 L 38 70 L 74 70 L 92 385 Z" fill="#053B1F" stroke="#FFD700" strokeWidth="3.5" />
 
-          <path d="M 0 0 Q -80 -60, -160 -10" stroke="#FFD700" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M -40 -35 Q -90 -45, -145 0 M -70 -25 Q -120 -30, -170 15" stroke="#1DB979" strokeWidth="2" fill="none" />
+          {/* Pink/Yellow Stripes */}
+          <path d="M 34 130 L 78 130 L 83 200 L 29 200 Z" fill="#FF007F" opacity="0.9" />
+          <path d="M 26 260 L 86 260 L 89 320 L 23 320 Z" fill="#FF007F" opacity="0.9" />
+          <line x1="34" y1="130" x2="78" y2="130" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="29" y1="200" x2="83" y2="200" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="26" y1="260" x2="86" y2="260" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="23" y1="320" x2="89" y2="320" stroke="#FFD700" strokeWidth="2.5" />
 
-          <path d="M 0 0 Q -100 10, -180 70" stroke="#FFD700" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M -50 10 Q -110 35, -170 85 M -80 25 Q -130 50, -185 100" stroke="#1DB979" strokeWidth="2" fill="none" />
+          {/* Balcony Railing */}
+          <rect x="30" y="60" width="52" height="10" rx="3" fill="#FFD700" stroke="#052E1D" strokeWidth="2" />
+          <line x1="32" y1="60" x2="32" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="44" y1="60" x2="44" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="56" y1="60" x2="56" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="68" y1="60" x2="68" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+          <line x1="80" y1="60" x2="80" y2="70" stroke="#052E1D" strokeWidth="1.5" />
+
+          {/* Lantern Room */}
+          <rect x="36" y="24" width="40" height="36" rx="4" fill="#FFD700" stroke="#FF007F" strokeWidth="2.5" />
+          <circle cx="56" cy="42" r="10" fill="#FAF7F2" />
+
+          {/* Dome Top & Spire */}
+          <path d="M 36 24 Q 56 4, 76 24 Z" fill="#FF007F" stroke="#FFD700" strokeWidth="2.5" />
+          <line x1="56" y1="4" x2="56" y2="-12" stroke="#FFD700" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="56" cy="-14" r="4" fill="#FFD700" />
+
+          {/* Rotating Beaming Light Rays */}
+          <motion.g
+            animate={{ rotate: [360, 0] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+            style={{ transformOrigin: "56px 42px" }}
+          >
+            <polygon points="56,42 -100,10 -120,75" fill="url(#rightLightGradient)" opacity="0.6" />
+            <polygon points="56,42 220,10 240,75" fill="url(#rightLightGradient)" opacity="0.6" />
+          </motion.g>
+          <defs>
+            <linearGradient id="rightLightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FFD700" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#FFD700" stopOpacity="0" />
+            </linearGradient>
+          </defs>
         </g>
 
         {/* ===== RIGHT: VW SURF VAN ===== */}
@@ -267,15 +322,12 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
               rotate: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
             }}
           >
-            {/* Boat Hull */}
             <path d="M 0 10 L 40 10 L 32 25 L 8 25 Z" fill="#FFD700" stroke="#052E1D" strokeWidth="2" />
-            {/* Sail */}
             <path d="M 20 10 L 20 -18 L 36 6 Z" fill="#FF007F" stroke="#FAF7F2" strokeWidth="1.5" />
-            {/* Flag */}
             <path d="M 20 -18 L 12 -23 L 20 -28 Z" fill="#FFD700" />
           </motion.g>
 
-          {/* Animated Sailing Paper Boat 2 (Offset delay) */}
+          {/* Animated Sailing Paper Boat 2 */}
           <motion.g
             animate={{
               x: ["-300px", "1500px"],
@@ -288,9 +340,7 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
               rotate: { duration: 3, repeat: Infinity, ease: "easeInOut" },
             }}
           >
-            {/* Boat Hull */}
             <path d="M 0 10 L 34 10 L 27 22 L 7 22 Z" fill="#FAF7F2" stroke="#FF007F" strokeWidth="2" />
-            {/* Sail */}
             <path d="M 17 10 L 17 -14 L 30 6 Z" fill="#FFD700" stroke="#052E1D" strokeWidth="1.5" />
           </motion.g>
 
@@ -309,20 +359,15 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
               ease: "easeInOut",
             }}
           >
-            {/* Sailor Boat Hull */}
             <path d="M -10 25 L 60 25 L 50 45 L 0 45 Z" fill="#0B6B3A" stroke="#FFD700" strokeWidth="2.5" />
             <line x1="5" y1="35" x2="45" y2="35" stroke="#FF007F" strokeWidth="2" />
 
-            {/* Sailor Character Body */}
             <circle cx="25" cy="5" r="14" fill="#FFD700" stroke="#052E1D" strokeWidth="2" />
 
-            {/* Cool Sailor Hat */}
             <path d="M 10 0 C 10 -12, 40 -12, 40 0 Z" fill="#FAF7F2" stroke="#FF007F" strokeWidth="2" />
             <rect x="8" y="-2" width="34" height="6" rx="2" fill="#0B6B3A" stroke="#FFD700" strokeWidth="1.5" />
-            {/* Anchor emblem on hat */}
             <path d="M 25 -9 L 25 -4 M 22 -6 L 28 -6 M 22 -4 Q 25 -1, 28 -4" stroke="#FFD700" strokeWidth="1.5" strokeLinecap="round" fill="none" />
 
-            {/* Sailor Wayfarer Sunglasses */}
             <g transform="translate(13, -2)">
               <path d="M 0 3 L 11 3 L 9 10 Q 5 12, 1 10 Z" fill="#052E1D" stroke="#FF007F" strokeWidth="1.5" />
               <path d="M 14 3 L 25 3 L 23 10 Q 19 12, 15 10 Z" fill="#052E1D" stroke="#FF007F" strokeWidth="1.5" />
@@ -331,10 +376,8 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
               <line x1="16" y1="5" x2="20" y2="9" stroke="#FAF7F2" strokeWidth="1" />
             </g>
 
-            {/* Sailor Smirk */}
             <path d="M 20 12 Q 25 16, 29 12" stroke="#052E1D" strokeWidth="2" strokeLinecap="round" fill="none" />
 
-            {/* Waving Sailor Arm */}
             <motion.path
               animate={{ rotate: [-10, 15, -10] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -345,10 +388,8 @@ export const GoaDoodles: React.FC<GoaDoodlesProps> = ({ mousePos }) => {
               fill="none"
               style={{ transformOrigin: "38px 12px" }}
             />
-            {/* Waving Hand */}
             <circle cx="55" cy="-10" r="3.5" fill="#FF007F" />
 
-            {/* Lifebuoy Ring on Boat */}
             <circle cx="-2" cy="35" r="8" fill="#FF007F" stroke="#FAF7F2" strokeWidth="2" />
             <circle cx="-2" cy="35" r="4" fill="#052E1D" />
           </motion.g>
