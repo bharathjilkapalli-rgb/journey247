@@ -156,7 +156,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             </motion.svg>
 
             {/* Doodle 3: Mini Paper Plane (Top Right of Title) */}
-            <motion.g
+            <motion.div
               animate={{ x: [-2, 3, -2], y: [0, -4, 0], rotate: [-5, 5, -5] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-7 -right-6 sm:-top-10 sm:-right-10 pointer-events-none z-10"
@@ -166,7 +166,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
                 <path d="M 24 6 L 36 10 L 26 22 Z" fill="#FFD700" stroke="#FAF7F2" strokeWidth="1.2" />
                 <path d="M 26 13 L 26 22" stroke="#FF007F" strokeWidth="1.2" />
               </svg>
-            </motion.g>
+            </motion.div>
 
             {/* Single Line Headline */}
             <h1
