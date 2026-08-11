@@ -74,21 +74,25 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
       >
         <button
           onClick={onLogoTap}
-          className="flex flex-col items-start leading-tight cursor-pointer group text-left"
+          className="flex flex-col items-start leading-none cursor-pointer group text-left select-none"
           aria-label="2:47PM Studio - tap for manifesto"
         >
-          <span
-            className="text-hh-yellow font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight group-hover:text-yellow-300 transition-colors duration-200"
+          <div
+            className="text-hh-yellow flex items-baseline tracking-normal group-hover:text-yellow-300 transition-colors duration-200"
             style={{
-              fontFamily: "'Sora', sans-serif",
-              textShadow: "0 0 18px rgba(250,204,21,0.6)",
+              fontFamily: "'Permanent Marker', 'Caveat Brush', cursive",
+              textShadow: "0 0 16px rgba(250,204,21,0.55)",
             }}
           >
-            2:47PM
-          </span>
+            <span className="text-3xl sm:text-4xl md:text-5xl">2:47</span>
+            <span className="text-base sm:text-lg md:text-xl ml-0.5">PM</span>
+          </div>
           <span
-            className="text-hh-yellow font-bold text-base sm:text-lg md:text-xl tracking-[0.3em] group-hover:text-yellow-300 transition-colors duration-200 mt-0.5"
-            style={{ fontFamily: "'Sora', sans-serif" }}
+            className="text-hh-yellow text-xl sm:text-2xl md:text-3xl tracking-widest group-hover:text-yellow-300 transition-colors duration-200 -mt-1 font-normal"
+            style={{
+              fontFamily: "'Permanent Marker', 'Caveat Brush', cursive",
+              textShadow: "0 0 16px rgba(250,204,21,0.55)",
+            }}
           >
             STUDIO
           </span>
