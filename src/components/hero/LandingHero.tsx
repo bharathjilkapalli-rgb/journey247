@@ -115,49 +115,106 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           initial={{ opacity: 0, scale: 0.92, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mb-4"
+          className="relative mb-4 w-full flex items-center justify-center"
         >
           {/* Glow behind title */}
           <div
-            className="absolute inset-0 blur-3xl opacity-30 pointer-events-none"
+            className="absolute inset-0 blur-3xl opacity-35 pointer-events-none"
             style={{
               background:
                 "radial-gradient(ellipse, #FFD700 0%, transparent 70%)",
               transform: "scaleY(0.5)",
             }}
           />
-          <h1
-            className="relative font-black leading-none tracking-tight select-none"
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: "clamp(3.5rem, 12vw, 9rem)",
-              color: "#FFD700",
-              textShadow:
-                "0 0 40px rgba(255,215,0,0.5), 0 4px 0 rgba(180,130,0,0.6), 0 8px 0 rgba(100,70,0,0.3), 2px 2px 0 rgba(255,215,0,0.3)",
-              WebkitTextStroke: "1px rgba(255,215,0,0.2)",
-            }}
-          >
-            HACKER{" "}
-            <span
-              className="inline-block px-4 py-1 rounded-xl mx-2 align-middle border border-pink-400/40"
+
+          {/* Title Container with cute floating doodles */}
+          <div className="relative inline-flex items-center justify-center">
+
+            {/* Doodle 1: Cute Mini Palm Leaf Accent (Top Left) */}
+            <motion.svg
+              animate={{ rotate: [-4, 4, -4], y: [0, -3, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -left-6 sm:-top-8 sm:-left-10 w-8 h-8 sm:w-12 sm:h-12 text-hh-yellow drop-shadow-md pointer-events-none z-10"
+              viewBox="0 0 40 40"
+              fill="none"
+            >
+              <path d="M 5 35 Q 20 10, 35 5" stroke="#FFD700" strokeWidth="2.5" strokeLinecap="round" />
+              <path d="M 35 5 Q 15 5, 8 18" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" fill="none" />
+              <path d="M 35 5 Q 25 22, 18 32" stroke="#FFD700" strokeWidth="2" strokeLinecap="round" fill="none" />
+              <circle cx="28" cy="12" r="2.5" fill="#FF007F" />
+            </motion.svg>
+
+            {/* Doodle 2: Glowing Sparkle (Top Right of Hindi Badge) */}
+            <motion.svg
+              animate={{ scale: [0.85, 1.15, 0.85], rotate: [0, 90, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-5 left-1/2 -translate-x-1/2 sm:-top-7 w-6 h-6 sm:w-8 sm:h-8 text-hh-yellow pointer-events-none z-10"
+              viewBox="0 0 24 24"
+              fill="#FFD700"
+            >
+              <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" />
+            </motion.svg>
+
+            {/* Doodle 3: Mini Paper Plane (Top Right of Title) */}
+            <motion.g
+              animate={{ x: [-2, 3, -2], y: [0, -4, 0], rotate: [-5, 5, -5] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-7 -right-6 sm:-top-10 sm:-right-10 pointer-events-none z-10"
+            >
+              <svg className="w-8 h-8 sm:w-11 sm:h-11 drop-shadow-md" viewBox="0 0 40 40" fill="none">
+                <path d="M 5 20 C 12 10, 22 25, 30 12" stroke="#FF007F" strokeWidth="1.5" strokeDasharray="2 2" fill="none" />
+                <path d="M 24 6 L 36 10 L 26 22 Z" fill="#FFD700" stroke="#FAF7F2" strokeWidth="1.2" />
+                <path d="M 26 13 L 26 22" stroke="#FF007F" strokeWidth="1.2" />
+              </svg>
+            </motion.g>
+
+            {/* Single Line Headline */}
+            <h1
+              className="relative font-black leading-none tracking-tight select-none flex items-center justify-center whitespace-nowrap"
               style={{
-                background:
-                  "linear-gradient(135deg, #FF007F 0%, #FF4DA6 100%)",
-                color: "#FAF7F2",
-                fontSize: "clamp(2.5rem, 8vw, 6rem)",
-                textShadow: "0 2px 10px rgba(0,0,0,0.3)",
-                WebkitTextStroke: "0",
-                verticalAlign: "middle",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: "900",
-                letterSpacing: "0.04em",
-                boxShadow: "0 6px 25px rgba(255,0,127,0.6)",
+                fontSize: "clamp(2rem, 7.5vw, 6.5rem)",
+                color: "#FFD700",
+                textShadow:
+                  "0 0 35px rgba(255,215,0,0.45), 0 4px 0 rgba(180,130,0,0.6), 0 7px 0 rgba(100,70,0,0.3), 2px 2px 0 rgba(255,215,0,0.3)",
+                WebkitTextStroke: "1px rgba(255,215,0,0.2)",
               }}
             >
-              GOA
-            </span>{" "}
-            HOUSE
-          </h1>
+              <span>HACKER</span>
+
+              {/* Hindi Goa Badge */}
+              <motion.span
+                whileHover={{ scale: 1.08, rotate: -2 }}
+                className="inline-flex items-center justify-center px-3 sm:px-5 py-0.5 sm:py-1 rounded-xl mx-2 sm:mx-3 align-middle border-2 border-pink-400/50 relative shadow-pink-glow"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #FF007F 0%, #FF4DA6 100%)",
+                  color: "#FAF7F2",
+                  fontSize: "clamp(1.6rem, 5.5vw, 4.8rem)",
+                  textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                  WebkitTextStroke: "0",
+                  fontFamily: "'Noto Sans Devanagari', 'Playfair Display', sans-serif",
+                  fontWeight: "800",
+                  letterSpacing: "0.02em",
+                  boxShadow: "0 6px 25px rgba(255,0,127,0.65)",
+                }}
+              >
+                गोवा
+              </motion.span>
+
+              <span>HOUSE</span>
+            </h1>
+
+            {/* Doodle 4: Cute Mini Code Tag Badge (Bottom Right) */}
+            <motion.div
+              animate={{ y: [0, 3, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-5 -right-4 sm:-bottom-6 sm:-right-8 px-2 py-0.5 rounded-md bg-forest-900 border border-yellow-400/60 text-hh-yellow font-mono text-[9px] sm:text-xs font-bold tracking-widest pointer-events-none shadow-md"
+            >
+              &lt;/&gt;
+            </motion.div>
+
+          </div>
         </motion.div>
 
         {/* ── EVENT DATE & LOCATION ── */}
