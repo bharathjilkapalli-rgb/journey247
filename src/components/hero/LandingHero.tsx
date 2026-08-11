@@ -78,19 +78,19 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           aria-label="2:47PM Studio - tap for manifesto"
         >
           <div
-            className="text-hh-yellow flex items-baseline tracking-normal group-hover:text-yellow-300 transition-colors duration-200"
+            className="text-hh-yellow flex items-baseline tracking-wide group-hover:text-yellow-300 transition-colors duration-200"
             style={{
-              fontFamily: "'Permanent Marker', 'Caveat Brush', cursive",
+              fontFamily: "'Luckiest Guy', cursive",
               textShadow: "0 0 16px rgba(250,204,21,0.55)",
             }}
           >
             <span className="text-3xl sm:text-4xl md:text-5xl">2:47</span>
-            <span className="text-base sm:text-lg md:text-xl ml-0.5">PM</span>
+            <span className="text-base sm:text-lg md:text-xl ml-1">PM</span>
           </div>
           <span
             className="text-hh-yellow text-xl sm:text-2xl md:text-3xl tracking-widest group-hover:text-yellow-300 transition-colors duration-200 -mt-1 font-normal"
             style={{
-              fontFamily: "'Permanent Marker', 'Caveat Brush', cursive",
+              fontFamily: "'Luckiest Guy', cursive",
               textShadow: "0 0 16px rgba(250,204,21,0.55)",
             }}
           >
