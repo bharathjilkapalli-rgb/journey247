@@ -83,7 +83,7 @@ export const VerificationTerminal: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between">
+    <div className="relative min-h-screen flex flex-col">
       <AnimatePresence mode="wait">
         {step === "hero" && (
           <motion.div
@@ -157,28 +157,28 @@ export const VerificationTerminal: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
-            className="py-12 px-4 max-w-5xl mx-auto w-full flex flex-col items-center"
+            className="py-6 px-4 w-full flex flex-col items-center"
           >
-            {/* Hover QR Code Tooltip Overlay */}
+            {/* QR hover tooltip */}
             {isQrHovered && (
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="mb-4 px-4 py-2 rounded-full bg-forest-900 border border-yellow-400/80 text-hh-yellow font-mono text-xs font-bold tracking-widest uppercase shadow-xl"
+                className="absolute top-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-forest-900 border border-yellow-400/80 text-hh-yellow font-mono text-xs font-bold tracking-widest uppercase shadow-xl"
               >
                 Scan to Continue Your Journey
               </motion.div>
             )}
 
-            {/* Clearance Card Component */}
+            {/* Card — auto-scaled to fit viewport, normal doc flow */}
             <ClearanceCard
               payload={payload}
               onSealClick={() => setIsSealModalOpen(true)}
               onQrHover={(hovered) => setIsQrHovered(hovered)}
             />
 
-            {/* Card Controls & Emotional Action Footer */}
+            {/* Controls — compact row below the card */}
             <CardControls
               builderNumber={payload.builderNumber}
               onReset={handleReset}

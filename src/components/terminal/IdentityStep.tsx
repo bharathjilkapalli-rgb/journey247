@@ -231,10 +231,19 @@ export const IdentityStep: React.FC<IdentityStepProps> = ({
           <button
             type="button"
             onClick={handleOpenCapture}
-            className="w-full py-4 rounded-2xl bg-forest-950/90 border border-yellow-500/40 hover:border-hh-yellow text-cream-100 font-mono text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-3 shadow-md hover:bg-forest-900 transition-all cursor-pointer"
+            className="w-full py-3.5 rounded-2xl bg-forest-950/90 border border-yellow-500/40 hover:border-hh-yellow text-cream-100 font-mono text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-3 shadow-md hover:bg-forest-900 transition-all cursor-pointer"
           >
             <Camera className="w-5 h-5 text-hh-pink" />
             <span>Option 2: Capture Photo (Camera)</span>
+          </button>
+
+          {/* Option 3: Quick Skip / Default Photo */}
+          <button
+            type="button"
+            onClick={() => onComplete("", filter)}
+            className="w-full py-2.5 rounded-xl border border-forest-700/80 hover:border-cream-300 text-cream-300/80 hover:text-white font-mono text-[11px] tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer mt-2"
+          >
+            <span>Option 3: Use Default Photo (Skip) →</span>
           </button>
         </div>
       ) : (
